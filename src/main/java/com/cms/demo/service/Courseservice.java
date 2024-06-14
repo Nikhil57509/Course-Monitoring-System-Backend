@@ -1,13 +1,15 @@
 package com.cms.demo.service;
 
+import com.cms.demo.courses.CourseDTO;
+import com.cms.demo.model.Coursemodel;
+
 import java.util.List;
-
-import com.cms.demo.courses.Course;
-
-
-
+import java.util.Optional;
 
 public interface Courseservice {
-	public List<Course> getallcourses();
-
+    Coursemodel createCourse(CourseDTO courseDTO);
+    
+    List<Coursemodel> getAllCourses();
+    
+    List<Coursemodel> findByName(String name);
 }
