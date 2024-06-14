@@ -14,10 +14,9 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Admin {
-	public String adminname;
-	public String password;
-		
-	
-
+public class Address {
+	public String houseno;
+	public String streetname;
+	public String pincode;
+	public String dist;
 }

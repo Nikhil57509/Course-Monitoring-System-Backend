@@ -1,11 +1,15 @@
 package com.cms.demo.service;
 
-import com.cms.demo.courses.Faculty;
+import java.util.List;
+import java.util.Optional;
+
+import com.cms.demo.model.Facultymodel;
 
 public interface Facultyservice {
-
-
-
-
-public String login(String username, String password);
+    String login(String username, String password);
+    List<Facultymodel> getAllFaculties();
+    Optional<Facultymodel> getFacultyById(Integer id);
+    Facultymodel createFaculty(Facultymodel facultyDTO);
+    Facultymodel updateFaculty(Integer id, Facultymodel facultyDTO);
+    void deleteFaculty(Integer id);
 }

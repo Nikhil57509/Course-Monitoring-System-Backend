@@ -20,5 +20,5 @@ public class Faculty {
 	public String email;
 	public String password;
 	public String username;
-
+	private Address address;
 }

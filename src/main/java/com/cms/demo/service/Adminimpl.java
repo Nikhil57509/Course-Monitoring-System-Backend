@@ -12,7 +12,7 @@ public class Adminimpl implements Adminservice {
 	private Adminrepo adminrepo;
 
 	public String admin(String uadminname, String password) {
-		Adminmodel admin=adminrepo.findbyadmin(uadminname);
+		Adminmodel admin=adminrepo.findByAdminname(uadminname);
 		if (admin != null && admin.getPassword().equals(password)) {
             return "success";
         } else {

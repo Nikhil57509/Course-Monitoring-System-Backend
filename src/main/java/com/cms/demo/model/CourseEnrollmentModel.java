@@ -1,11 +1,12 @@
 package com.cms.demo.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,21 +15,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Facultymodel {
-
+public class CourseEnrollmentModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String dist;
-    private String houseno;
-    private String pincode;
-    private String streetname;
-    private String email;
-    private String mobile;
-    private String name;
-    private String password;
-    private String username;
-
-    // Getters and Setters
+    @OneToOne
+    private Studentmodel student;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Coursemodel course;
 }
